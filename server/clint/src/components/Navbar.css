@@ -1,10 +1,38 @@
 .container {
-    max-width: 140rem;
-    padding: 4.2rem 2.4rem;
-    display: flex;
-    justify-content: space-between;
+  max-width: 140rem;
+  padding: 4.2rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+ul {
+  display: flex;
+  gap: 3.2rem;
+  flex-wrap: wrap; /* Wraps list items to the next line on smaller screens */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
   }
+
   ul {
-    display: flex;
-    gap: 3.2rem;
+    justify-content: center; /* Center the list items */
+    gap: 2rem; /* Reduce the gap on smaller screens */
   }
+}
+
+/* Media query for extra small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem; /* Adjust padding for small screens */
+  }
+
+  ul {
+    flex-direction: column; /* Stack list items vertically */
+    gap: 1.6rem; /* Further reduce the gap */
+  }
+}
